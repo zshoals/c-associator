@@ -5,21 +5,50 @@
 int main (void) {
 	unsigned long int a;
 	unsigned long int b;
-	unsigned char c[1];
-	unsigned char d;
+	unsigned long int c;
+	unsigned long int * d;
 	unsigned char * e;
-	a = AvolittyAssociatorA(e, "key", "value", 3, 5, c);
-	b = AvolittyAssociatorB(e, "key", 3, c);
-	d = AvolittyAssociatorC(e, "key", 3, c);
+	unsigned char * f;
+	unsigned char g;
+	c = ((unsigned long int) 0UL);
+	d = &c;
+	g = ((unsigned char) 1U);
+
+	/*
+		["key"] - key string
+		["value"] - value string
+		[d] -  array length (keys and values)
+		[3] - key length
+		[5] - value length
+		[e] - array of keys
+		[f] - array of values
+		[g] - key object type identifier
+			0 - integral
+			1 - string
+		[g] - value object type identifier
+			0 - integral (signed or unsigned can be determined with -, floats determined with .)
+			1 - string
+			2 - pointer index to array (multidimensional arrays can be accessed using get method with raw a[0][0][0] etc without undefined index errors)
+	*/
+
+	a = AvolittyAssociatorA("key", "value", d, ((unsigned long int) 3UL), ((unsigned long int) 5UL), e, f, g, g);
 
 /*
-	unsigned char a[33];
-	unsigned char b[33];
-	b[0] = 's';
-	b[1] = 't';
-	b[2] = 'r';
-	b[3] = 0;
-	AvolittyAssociatorD(b, 3, a);
+	key (unsigned char)
+		"34", [3, 4], ((unsigned short int) 34), ((unsigned char) 34) and ((float) 34.1234) all update the same key
+		indexes
+			0 length (either raw value < 32 or hash)
+			1 memory alloc length (to calculate percentage of unused memory)
+			2-33 (hash digits | key string)
+	value (unsigned char)
+		all data types converted to char array
+			0 length
+			1-n value
+	value data
+		0 [
+			value length,
+			memory alloc length
+		]
 */
 
 	return 0;
