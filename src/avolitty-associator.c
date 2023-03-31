@@ -7,7 +7,6 @@ void AvolittyAssociatorF(unsigned long a, unsigned char * b, unsigned char * c) 
 	unsigned short e = 32;
 	unsigned short f;
 	unsigned char g;
-	b = malloc(32);
 
 	while (a != 0) {
 		a--;
@@ -32,14 +31,10 @@ void AvolittyAssociatorF(unsigned long a, unsigned char * b, unsigned char * c) 
 
 unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d) {
 	a[0] = malloc(sizeof(unsigned long * *));
-	a[0][0] = malloc(sizeof(unsigned long *) * 4);
+	a[0][0] = malloc(sizeof(unsigned long *) * 2);
 	a[0][0][0] = 0;
 	a[0][0][1] = 0;
-	a[0][0][2] = 1;
-	a[0][0][3] = 1;
 	b[0] = 0;
-	b[1] = 1;
-	b[2] = 1;
 	c[0] = malloc(sizeof(unsigned char * * *));
 	d[0] = malloc(sizeof(unsigned char * * *));
 	return 0;
@@ -48,16 +43,17 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 /*
 	[a] - key
 	[b] - value
-	[c] - value data
-	[d] - value data data [array length][malloc] (keys and values)
-	[e] - key length
-	[f] - value length
-	[g] - array of keys
-	[h] - array of values
-	[i] - key object type identifier
+	[c] - global data
+	[d] - global data length
+	[e] - key lengths
+	[f] - key depth
+	[g] - value length
+	[h] - array of keys
+	[i] - array of values
+	[j] - key object type identifier
 		0 - integral object
 		1 - string object
-	[j] - value object type identifier (not data type)
+	[k] - value object type identifier (not data type)
 		0 - integral object
 		1 - string object
 		2 - pointer index to array (multidimensional associative arrays)
@@ -65,46 +61,109 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 	adding error handling with each malloc() + realloc()
 */
 
-unsigned char AvolittyAssociatorB(void * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long e, unsigned long f, unsigned char * * * * g, unsigned char * * * * h, unsigned char i, unsigned char j) {
-	unsigned long k = d[0];
+unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
 	unsigned long l = 0;
 	unsigned long m = 0;
 	unsigned long n = 0;
-	unsigned long o = 0;
-	unsigned char * p;
+	unsigned long o;
+	unsigned long p = 0;
 	unsigned char * q;
-	unsigned char r;
+	unsigned char * r;
 	unsigned char s;
+	unsigned char t = 0;
+	unsigned long * u;
+	unsigned char v = 0;
+	unsigned long w = 0;
+	unsigned char * x;
+	q = malloc(sizeof(unsigned char *) * 32);
 
-	while (k != 0) {
-		k--;
-		/* .. */
+	while (l != f) {
+		m = d[0];
+
+		if (e[l] < 32) {
+			q = (unsigned char *) a[l];
+		} else {
+			AvolittyAssociatorF(e[l], q, (unsigned char *) a[l]);
+		}
+
+		o = 0;
+
+		while (m != 0) {
+			m--;
+
+			if (c[0][m][0] != 0) {
+				if (c[0][m][1] == l) {
+					n = c[0][m][0];
+
+					while (n != 0) {
+						n--;
+						r = h[0][m][n];
+						p = r[0];
+						w = p;
+
+						while (p != 0) {
+							p--;
+
+							if (q[p] != r[w]) {
+								p = 0;
+								t = 1;
+							}
+
+							w--;
+						}
+
+						if (t == 0) {
+							if (f == l) {
+								o = e[l];
+								free(i[0][m][n]);
+								i[0][m][n] = malloc(o + 1);
+								r = i[0][m][n];
+								r[0] = 0;
+								c[0][m][0] = o;
+								n = o;
+								x = (unsigned char *) b;
+
+								while (o != 0) {
+									o--;
+									r[n] = x[o];
+									n--;
+								}
+							} else {
+								/* r[0] = 1, converting int to char array */
+							}
+
+							m = 0;
+							n = 0;
+							o = 0;
+						}
+					}
+				}
+			} else {
+				if (t == 0) {
+					o = m;
+					t = 1;
+				}
+			}
+		}
+
+		if (o != 0) {
+			n = e[l];
+			h[0][o] = malloc(sizeof(unsigned char * *));
+			h[0][o][0] = malloc(n + 1);
+			r = h[0][o][0];
+			r[0] = n;
+			o = n;
+
+			while (n != 0) {
+				n--;
+				r[o] = q[n];
+				o--;
+			}
+		}
+
+		l++;
 	}
 
-	if (e < 32) {
-		l = e + 2;
-		p = (unsigned char *) a;
-	} else {
-		AvolittyAssociatorF(e, p, q);
-		l = 34;
-	}
-
-	g[0] = realloc(g[0], sizeof(unsigned char * * *) * 2);
-	g[0][m] = malloc(sizeof(unsigned char * *));
-	g[0][m][n] = realloc(g[0][m][n], l);
-	q = g[0][m][n];
-	q[0] = l;
-	q[1] = l;
-	o = l;
-	l -= 2;
-
-	while (l != 0) {
-		l--;
-		o--;
-		q[o] = p[l];
-	}
-
-	d[0] += 1;
 	/* .. */
 	return 0;
 }
