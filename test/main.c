@@ -39,16 +39,18 @@ int main (void) {
 		"34", [3, 4], (unsigned short int) 34, (unsigned char) 34 and (float) 34.1234 all update different keys
 		indexes
 			0 length (either raw value < 32 or hash)
-			1-32 (hash digits | key string)
+			1-32 (hash numbers | key string)
 	value (unsigned char)
 		all data types converted to char array
 			0 value type
-				[0] means value is an object converted to unsigned char
-				[1] means value is an array with the global data index converted to unsigned char
+				0 multidimensional array index in global data array
+				1 char
+				2 unsigned char
+				etc
 			1-n value
 	global data (unsigned long)
 		0 [
-			0 value char array length [value of 0 means unallocated],
+			0 value array length [value of 0 means unallocated],
 			1 key multidimensional recursion level
 		]
 	global data length (unsigned long)
