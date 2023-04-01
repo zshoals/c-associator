@@ -119,7 +119,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 							if (f == l) {
 								o = e[l] + 1;
 								free(i[0][m][n]);
-								i[0][m][n] = malloc(o + 1);
+								i[0][m][n] = malloc(y + 1);
 								r = i[0][m][n];
 								r[0] = 0;
 								r[o] = 0;
@@ -179,7 +179,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 				c[0][m][1] = l;
 				h[0] = realloc(h[0], n);
 				h[0][m] = malloc(sizeof(unsigned char *));
-				o = e[l] + 1;
+				o = y + 1;
 				h[0][m][0] = malloc(o);
 				r = h[0][m][0];
 				r[0] = o;
@@ -193,7 +193,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 
 				i[0] = realloc(i[0], n);
 				i[0][m] = malloc(sizeof(unsigned char *));
-				/* .. */
+				i[0][m][0] = malloc(g);
+				r = i[0][m][0];
+				o = g;
+				x = (unsigned char *) b;
+
+				if (f == l) {
+					r[0] = 1; /* .. */
+
+					while (g != 0) {
+						o--;
+						r[o] = x[g];
+						g--;
+					}
+
+					/* .. */
+				} else {
+					r[0] = 0;
+					/* .. */
+				}
 			}
 		}
 

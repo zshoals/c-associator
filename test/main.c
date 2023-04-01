@@ -43,7 +43,7 @@ int main (void) {
 	value (unsigned char)
 		all data types converted to char array
 			0 value type
-				0 multidimensional array index in global data array
+				0 multidimensional array index in global data array, 1-n is index converted from unsigned long
 				1 char
 				2 unsigned char
 				etc
