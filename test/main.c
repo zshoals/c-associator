@@ -7,17 +7,17 @@ int main (void) {
 	unsigned long b[1];
 	unsigned char * * * * c = malloc(sizeof(unsigned char * * * *));
 	unsigned char * * * * d = malloc(sizeof(unsigned char * * * *));
-	char * e[2] = {"key1", "key2"};
-	unsigned long f[2] = {4, 4};
+	char * e[3] = {"key1", "key2", "key3"};
+	unsigned long f[3] = {4, 4, 4};
 	unsigned char g;
 
 	/*
-		["key"] - key string
-		["value"] - value string
+		[e] - keys
+		["value"] - value
 		[a] - global data
 		[b] - global data length
-		[3] - key length
-		[1] - key dimension level
+		[f] - key lengths
+		[3] - key dimension level
 		[5] - value length
 		[c] - array of keys
 		[d] - array of values
@@ -31,7 +31,7 @@ int main (void) {
 	*/
 
 	g = AvolittyAssociatorA(a, b, c, d);
-	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 2, 5, c, d, 1, 1);
+	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
 /*	printf("%c%c%c\n", c[0][0][0][2], c[0][0][0][3], c[0][0][0][4]); */
 
 /*
