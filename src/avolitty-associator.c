@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -144,10 +143,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 					n++;
 				}
 			} else {
-				free(i[0][0][m]);
-				i[0][0][m] = malloc(2);
 				x = i[0][0][m];
-				x[0] = 0;
 			}
 
 			m = 0;
@@ -252,7 +248,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 								free(i[0][m][n]);
 								i[0][m][n] = malloc(o + 1);
 								r = i[0][m][n];
-								r[0] = 0;
+								r[0] = 1;
 								r[o] = 0;
 								n = 0;
 								p = 0;
@@ -264,24 +260,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 									p++;
 								}
 							} else {
-								z = m;
-								o = z;
-								w = n;
-
-								while (z != 0) {
-									o /= 100;
-									p = z - (o * 100);
-									x[w] = p;
-									w++;
-									x = realloc(x, w + 1);
-									z = o;
-								}
-
-								x[w] = 0;
-								free(i[0][m][n]);
-								i[0][m][n] = malloc(2);
 								x = i[0][m][n];
-								x[0] = 0;
 							}
 
 							m = 0;
