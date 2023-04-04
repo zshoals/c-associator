@@ -34,7 +34,7 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 	a[0][0] = malloc(sizeof(unsigned long) * 2);
 	a[0][0][0] = 0;
 	a[0][0][1] = 0;
-	b[0] = 0;
+	b[0] = 1;
 	c[0] = malloc(sizeof(unsigned char * *));
 	d[0] = malloc(sizeof(unsigned char * *));
 	return 0;
