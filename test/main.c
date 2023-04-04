@@ -31,6 +31,7 @@ int main (void) {
 	*/
 	g = AvolittyAssociatorA(a, b, c, d);
 	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
+
 	/*
 	e[2] = "key4";
 	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
