@@ -70,7 +70,6 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 	unsigned char * r;
 	unsigned char s = 0;
 	unsigned char t = 1;
-	unsigned long * u;
 	unsigned char v = 0;
 	unsigned long w = 0;
 	unsigned char * x;
@@ -110,23 +109,6 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 
 		if (t == 0) {
 			if (f == l) {
-				if (f > 1) {
-					o = 1;
-					z = m;
-					p = z;
-
-					while (z != 0) {
-						p /= 100;
-						w = z - (p * 100);
-						x[o] = w;
-						o++;
-						x = realloc(x, o + 1);
-						z = p;
-					}
-
-					x[o] = 0;
-				}
-
 				o = g + 1;
 				free(i[0][0][m]);
 				i[0][0][m] = malloc(o + 1);
@@ -189,6 +171,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 			i[0][0][m] = malloc(2);
 			x = i[0][0][m];
 			x[0] = 0;
+			x[1] = 0;
 		}
 	}
 
@@ -252,19 +235,12 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 					}
 
 					n = 0;
+					s = 1;
 				} else {
 					s = 0;
 				}
 			}
 		}
-
-
-
-
-
-
-
-
 
 		if (s == 0) {
 			m = d[0];
@@ -296,21 +272,22 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 							}
 
 							if (t == 0) {
+								o = 1;
+								z = m;
+								p = z;
+
+								while (z != 0) {
+									p /= 100;
+									w = z - (p * 100);
+									x[o] = w;
+									o++;
+									x = realloc(x, o + 1);
+									z = p;
+								}
+
+								x[o] = 0;
+
 								if (f == l + 1) {
-									o = 1;
-									z = m;
-									p = z;
-
-									while (z != 0) {
-										p /= 100;
-										w = z - (p * 100);
-										x[o] = w;
-										o++;
-										x = realloc(x, o + 1);
-										z = p;
-									}
-
-									x[o] = 0;
 									o = g + 1;
 									free(i[0][m][n]);
 									i[0][m][n] = malloc(o + 1);
@@ -363,6 +340,21 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 					o--;
 				}
 
+				n = 1;
+				z = m;
+				o = z;
+
+				while (z != 0) {
+					o /= 100;
+					p = z - (o * 100);
+					x[n] = p;
+					n++;
+					x = realloc(x, n + 1);
+					z = o;
+				}
+
+				x[n] = 0;
+
 				if (f == l + 1) {
 					o = g + 1;
 					i[0][m][0] = malloc(o + 1);
@@ -379,23 +371,10 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 						p++;
 					}
 				} else {
-					n = 1;
-					z = m;
-					o = z;
-
-					while (z != 0) {
-						o /= 100;
-						p = z - (o * 100);
-						x[n] = p;
-						n++;
-						x = realloc(x, n + 1);
-						z = o;
-					}
-
-					x[n] = 0;
 					i[0][m][0] = malloc(2);
 					x = i[0][m][0];
 					x[0] = 0;
+					x[1] = 0;
 				}
 			} else {
 				if (t == 1) {
@@ -407,7 +386,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 						n++;
 					}
 
-					if (d[0] == m + 1) {
+					if (m == 0) {
 						d[0] += 1;
 						m = d[0];
 						n = m * sizeof(unsigned char * *);
@@ -418,26 +397,48 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 						c[0][m][1] = l;
 						h[0] = realloc(h[0], n);
 						h[0][m] = malloc(sizeof(unsigned char *));
-						o = y;
-						h[0][m][0] = malloc(o + 1);
-						r = h[0][m][0];
-						r[0] = o;
-						p = o;
-
-						while (o != 0) {
-							p--;
-							r[o] = q[p];
-							o--;
-						}
-
 						i[0] = realloc(i[0], n);
 						i[0][m] = malloc(sizeof(unsigned char *));
+						n = 0;
+					} else {
+						n = c[0][m][0];
+						c[0][m][0] += 1;
+						o = (n + 1) * sizeof(unsigned char *);
+						h[0][m] = realloc(h[0][m], o);
+						i[0][m] = realloc(i[0][m], o);
 					}
+
+					o = y;
+					h[0][m][n] = malloc(o + 1);
+					r = h[0][m][n];
+					r[0] = o;
+					p = o;
+
+					while (o != 0) {
+						p--;
+						r[o] = q[p];
+						o--;
+					}
+
+					w = 1;
+					z = m;
+					o = z;
+
+					while (z != 0) {
+						o /= 100;
+						p = z - (o * 100);
+						x[w] = p;
+						w++;
+						x = realloc(x, w + 1);
+						z = o;
+					}
+
+					x[w] = 0;
 
 					if (f == l + 1) {
 						o = g + 1;
-						i[0][m][0] = malloc(o + 1);
-						r = i[0][m][0];
+						i[0][m][n] = malloc(o + 1);
+						r = i[0][m][n];
 						r[0] = 1;
 						r[o] = 0;
 						n = 0;
@@ -450,23 +451,10 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 							p++;
 						}
 					} else {
-						n = 1;
-						z = m;
-						o = z;
-
-						while (z != 0) {
-							o /= 100;
-							p = z - (o * 100);
-							x[n] = p;
-							n++;
-							x = realloc(x, n + 1);
-							z = o;
-						}
-
-						x[n] = 0;
-						i[0][m][0] = malloc(2);
-						x = i[0][m][0];
+						i[0][m][n] = malloc(2);
+						x = i[0][m][n];
 						x[0] = 0;
+						x[1] = 0;
 					}
 				}
 			}
