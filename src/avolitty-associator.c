@@ -56,8 +56,6 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 		0 - integral object
 		1 - string object
 		2 - pointer index to array (multidimensional associative arrays)
-
-	adding error handling with each malloc() + realloc()
 */
 
 unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
@@ -516,13 +514,78 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 	return u;
 }
 
-unsigned char AvolittyAssociatorC(void * a, void * b, unsigned long c, unsigned char * d) {
-	/* get */
-	return 0;
+/*
+	[a] - key
+	[b] - value result
+	[c] - global data
+	[d] - global data length
+	[e] - key lengths
+	[f] - value result length
+	[g] - key depth
+	[h] - array of keys
+	[i] - key object type identifier
+		0 - integral object
+		1 - string object
+*/
+
+unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char i) {
+	unsigned long j = 0;
+	unsigned char k = 0;
+	unsigned long * l;
+	unsigned long m;
+	unsigned char * n;
+	unsigned char o;
+	unsigned char * p;
+	unsigned char q;
+	unsigned char r;
+
+	while (g != j && k == 0) {
+		if (e[j] < 32) {
+			n = (unsigned char *) a[j];
+			o = e[j];
+		} else {
+			AvolittyAssociatorF(e[j], n, (unsigned char *) a[j]);
+			o = 32;
+		}
+
+		l = c[0][j];
+
+		if (l[1] == j) {
+			m = l[0];
+
+			while (m != 0) {
+				m--;
+				p = h[0][j][m];
+				q = p[0];
+
+				if (o == q) {
+					r = q;
+
+					while (q != 0) {
+						r--;
+
+						if (n[r] != p[q]) {
+							/* .. */
+						}
+
+						q--;
+					}
+				}
+			}
+		}
+
+		j++;
+	}
+
+	if (f[0] == 0 && k == 0) {
+		k = 1;
+	}
+
+	return k;
 }
 
 unsigned char AvolittyAssociatorD(void * a, void * b, unsigned long c, unsigned char * d) {
-	/* delete */
+	/* delete/resize */
 	return 0;
 }
 

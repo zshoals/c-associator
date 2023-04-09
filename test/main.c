@@ -10,6 +10,8 @@ int main (void) {
 	char * e[3] = {"key1", "key2", "key3"};
 	unsigned long f[3] = {4, 4, 4};
 	unsigned char g;
+	void * h;
+	unsigned long i[1] = {0};
 
 	/*
 		[e] - keys
@@ -29,6 +31,7 @@ int main (void) {
 			1 - string
 			2 - pointer index to array (multidimensional arrays can be accessed using get method with raw a[0][0][0] etc without undefined index errors)
 	*/
+
 	g = AvolittyAssociatorA(a, b, c, d);
 	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
 	printf("%u %c%c%c%c\n", c[0][0][0][0], c[0][0][0][1], c[0][0][0][2], c[0][0][0][3], c[0][0][0][4]);
@@ -37,6 +40,7 @@ int main (void) {
 	printf("%u %u %u\n", d[0][1][0][0], d[0][1][0][1], d[0][1][0][2]);
 	printf("%u %c%c%c%c\n", c[0][2][0][0], c[0][2][0][1], c[0][2][0][2], c[0][2][0][3], c[0][2][0][4]);
 	printf("%u %c%c%c%c%c%c\n", d[0][2][0][0], d[0][2][0][1], d[0][2][0][2], d[0][2][0][3], d[0][2][0][4], d[0][2][0][5], d[0][2][0][6]);
+
 	e[1] = "key5";
 	e[2] = "key4";
 	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
@@ -52,6 +56,22 @@ int main (void) {
 	printf("%u %c%c%c%c%c%c\n", d[0][3][0][0], d[0][3][0][1], d[0][3][0][2], d[0][3][0][3], d[0][3][0][4], d[0][3][0][5], d[0][3][0][6]);
 
 /*
+	[e] - key
+	[h] - value result
+	[a] - global data
+	[b] - global data length
+	[f] - key lengths
+	[i] - value result length
+	[3] - key depth
+	[c] - array of keys
+	[1] - key object type identifier
+		0 - integral object
+		1 - string object
+*/
+
+	g = AvolittyAssociatorC((void * *) e, h, a, b, f, i, 3, c, 1);
+
+/*
 	key (unsigned char)
 		"34", [3, 4], (unsigned short int) 34, (unsigned char) 34 and (float) 34.1234 all update different keys
 		indexes
@@ -63,12 +83,20 @@ int main (void) {
 				0 multidimensional array index in global data array, 1-n is index converted from unsigned long
 				1 char
 				2 unsigned char
+				3 int
+				4 unsigned int
+				5 long
+				6 unsigned long
+				7 double
+				8 float
 				etc
 			1-n value
 	global data (unsigned long)
 		0 [
 			0 value array length [value of 0 means unallocated],
 			1 key multidimensional recursion level
+			2 allocated byte count
+			3 assigned byte count
 		]
 	global data length (unsigned long)
 */

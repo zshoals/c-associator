@@ -5,7 +5,7 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 
 unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k);
 
-unsigned char AvolittyAssociatorC(void * a, void * b, unsigned long c, unsigned char * d);
+unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char i);
 
 unsigned char AvolittyAssociatorD(void * a, void * b, unsigned long c, unsigned char * d);
 
