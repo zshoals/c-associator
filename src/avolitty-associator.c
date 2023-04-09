@@ -29,14 +29,35 @@ void AvolittyAssociatorF(unsigned long a, unsigned char * b, unsigned char * c) 
 }
 
 unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d) {
+	unsigned char e = 0;
 	a[0] = malloc(sizeof(unsigned long *));
-	a[0][0] = malloc(sizeof(unsigned long) * 2);
-	a[0][0][0] = 0;
-	a[0][0][1] = 0;
-	b[0] = 1;
-	c[0] = malloc(sizeof(unsigned char * *));
-	d[0] = malloc(sizeof(unsigned char * *));
-	return 0;
+
+	if (a[0] != 0) {
+		a[0][0] = malloc(sizeof(unsigned long) * 2);
+
+		if (a[0][0] != 0) {
+			a[0][0][0] = 0;
+			a[0][0][1] = 0;
+			b[0] = 1;
+			c[0] = malloc(sizeof(unsigned char * *));
+
+			if (c[0] != 0) {
+				d[0] = malloc(sizeof(unsigned char * *));
+
+				if (d[0] == 0) {
+					e = 1;
+				}
+			} else {
+				e = 1;
+			}
+		} else {
+			e = 1;
+		}
+	} else {
+		e = 1;
+	}
+
+	return e;
 }
 
 /*
