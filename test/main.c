@@ -54,6 +54,7 @@ int main (void) {
 	printf("%u %c%c%c%c\n", c[0][3][0][0], c[0][3][0][1], c[0][3][0][2], c[0][3][0][3], c[0][3][0][4]);
 	printf("%u %c%c%c%c%c%c\n", d[0][2][0][0], d[0][2][0][1], d[0][2][0][2], d[0][2][0][3], d[0][2][0][4], d[0][2][0][5], d[0][2][0][6]);
 	printf("%u %c%c%c%c%c%c\n", d[0][3][0][0], d[0][3][0][1], d[0][3][0][2], d[0][3][0][3], d[0][3][0][4], d[0][3][0][5], d[0][3][0][6]);
+	printf("\n");
 
 /*
 	[e] - key
@@ -90,7 +91,8 @@ int main (void) {
 				7 double
 				8 float
 				etc
-			1-n value
+			1-n length
+			2-n value
 	global data (unsigned long)
 		0 [
 			0 value array length [value of 0 means unallocated],

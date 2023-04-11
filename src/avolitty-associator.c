@@ -559,6 +559,8 @@ unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, u
 	unsigned char * p;
 	unsigned char q;
 	unsigned char r;
+	unsigned char s;
+	unsigned long t;
 
 	while (g != j && k == 0) {
 		if (e[j] < 32) {
@@ -569,33 +571,57 @@ unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, u
 			o = 32;
 		}
 
-		l = c[0][j];
+		t = 0;
 
-		if (l[1] == j) {
-			m = l[0];
+		while (t != d[0]) {
+			if (c[0][t][1] == j) {
+				m = c[0][t][0];
 
-			while (m != 0) {
-				m--;
-				p = h[0][j][m];
-				q = p[0];
+				while (m != 0) {
+					m--;
+					p = h[0][t][m];
+					q = p[0];
 
-				if (o == q) {
-					r = q;
+					if (o == q) {
+						r = q;
+						s = 0;
 
-					while (q != 0) {
-						r--;
+						while (q != 0) {
+							q--;
 
-						if (n[r] != p[q]) {
-							/* .. */
+							if (n[q] != p[r]) {
+								q = 0;
+								s = 1;
+							}
+
+							r--;
 						}
 
-						q--;
+						if (s == 0) {
+							k = 0;
+							m = 0;
+							t = d[0] - 1;
+						}
 					}
 				}
+
+				if (s == 1) {
+					k = 1;
+				}
 			}
+
+			t++;
 		}
 
-		j++;
+		if (k == 1) {
+			g = j;
+		} else {
+			j++;
+		}
+	}
+
+	if (k == 0) {
+		/* .. */
 	}
 
 	if (f[0] == 0 && k == 0) {
