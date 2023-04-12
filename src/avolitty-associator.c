@@ -150,18 +150,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 							n++;
 							o++;
 							r = realloc(r, n);
-							z = p;
+
+							if (r != 0) {
+								z = p;
+							} else {
+								u = 1;
+							}
 						}
 
-						r[o] = 0;
-						o++;
-						n = 0;
-						x = (unsigned char *) b;
-
-						while (n != g) {
-							r[o] = x[n];
-							n++;
+						if (u == 0) {
+							r[o] = 0;
 							o++;
+							n = 0;
+							x = (unsigned char *) b;
+
+							while (n != g) {
+								r[o] = x[n];
+								n++;
+								o++;
+							}
 						}
 					} else {
 						u = 1;
@@ -220,18 +227,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 									n++;
 									o++;
 									r = realloc(r, n);
-									z = p;
+
+									if (r != 0) {
+										z = p;
+									} else {
+										u = 1;
+									}
 								}
 
-								r[o] = 0;
-								o++;
-								n = 0;
-								x = (unsigned char *) b;
-
-								while (n != g) {
-									r[o] = x[n];
-									n++;
+								if (u == 0) {
+									r[o] = 0;
 									o++;
+									n = 0;
+									x = (unsigned char *) b;
+
+									while (n != g) {
+										r[o] = x[n];
+										n++;
+										o++;
+									}
 								}
 							} else {
 								u = 1;
@@ -318,18 +332,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 									n++;
 									o++;
 									r = realloc(r, o);
-									z = p;
+
+									if (r != 0) {
+										z = p;
+									} else {
+										u = 1;
+									}
 								}
 
-								r[n] = 0;
-								n++;
-								o = 0;
-								x = (unsigned char *) b;
-
-								while (o != g) {
-									r[n] = x[o];
+								if (u == 0) {
+									r[n] = 0;
 									n++;
-									o++;
+									o = 0;
+									x = (unsigned char *) b;
+
+									while (o != g) {
+										r[n] = x[o];
+										n++;
+										o++;
+									}
 								}
 							} else {
 								u = 1;
@@ -386,10 +407,15 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 										x[o] = w;
 										o++;
 										x = realloc(x, o + 1);
-										z = p;
+
+										if (x != 0) {
+											z = p;
+										} else {
+											u = 1;
+										}
 									}
 
-									if (x != 0) {
+									if (u == 0) {
 										x[o] = 0;
 
 										if (f == l + 1) {
@@ -413,18 +439,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 													n++;
 													o++;
 													r = realloc(r, o);
-													z = p;
+
+													if (r != 0) {
+														z = p;
+													} else {
+														u = 1;
+													}
 												}
 
-												r[n] = 0;
-												n++;
-												o = 0;
-												x = (unsigned char *) b;
-
-												while (o != g) {
-													r[n] = x[o];
+												if (u == 0) {
+													r[n] = 0;
 													n++;
-													o++;
+													o = 0;
+													x = (unsigned char *) b;
+
+													while (o != g) {
+														r[n] = x[o];
+														n++;
+														o++;
+													}
 												}
 											} else {
 												u = 1;
@@ -539,10 +572,15 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 								x[w] = p;
 								w++;
 								x = realloc(x, w + 1);
-								z = o;
+
+								if (x != 0) {
+									z = o;
+								} else {
+									u = 1;
+								}
 							}
 
-							if (x != 0) {
+							if (u == 0) {
 								x[w] = 0;
 
 								if (f == l + 1) {
@@ -565,18 +603,25 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 											n++;
 											o++;
 											r = realloc(r, o);
-											z = p;
+
+											if (r != 0) {
+												z = p;
+											} else {
+												u = 1;
+											}
 										}
 
-										r[n] = 0;
-										n++;
-										o = 0;
-										x = (unsigned char *) b;
-
-										while (o != g) {
-											r[n] = x[o];
+										if (u == 0) {
+											r[n] = 0;
 											n++;
-											o++;
+											o = 0;
+											x = (unsigned char *) b;
+
+											while (o != g) {
+												r[n] = x[o];
+												n++;
+												o++;
+											}
 										}
 									} else {
 										u = 1;
