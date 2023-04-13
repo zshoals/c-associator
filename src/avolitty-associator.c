@@ -670,12 +670,14 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 	[f] - value result length
 	[g] - key depth
 	[h] - array of keys
+	[u] - array of values
+	[v] - value result data type
 	[i] - key object type identifier
 		0 - integral object
 		1 - string object
 */
 
-unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char i) {
+unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char * v, unsigned char i) {
 	unsigned long j = 0;
 	unsigned char k = 0;
 	unsigned long * l;
@@ -753,16 +755,17 @@ unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c,
 		g = f[0];
 		f[0] = 0;
 		p = u[0][m][g];
+		g = 1;
+		m = 0;
+
+		while (p[g] != 0) {
+			m = (m * 100) + p[g];
+			g++;
+		}
+
+		v[0] = p[0];
 
 		if (p[0] != 0) {
-			g = 1;
-			m = 0;
-
-			while (p[g] != 0) {
-				m = (m * 100) + p[g];
-				g++;
-			}
-
 			b[0] = realloc(b[0], m);
 			n = (unsigned char *) b[0];
 
