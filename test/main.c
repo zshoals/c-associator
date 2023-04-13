@@ -10,8 +10,10 @@ int main (void) {
 	char * e[3] = {"key1", "key2", "key3"};
 	unsigned long f[3] = {4, 4, 4};
 	unsigned char g;
-	void * h;
+	void * * h = malloc(sizeof(unsigned char *));
 	unsigned long i[1] = {0};
+	unsigned long j = 0;
+	unsigned char * k;
 
 	/*
 		[e] - keys
@@ -67,12 +69,19 @@ int main (void) {
 	[i] - value result length
 	[3] - key depth
 	[c] - array of keys
+	[d] - array of values
 	[1] - key object type identifier
 		0 - integral object
 		1 - string object
 */
 
-	g = AvolittyAssociatorC((void * *) e, h, a, b, f, i, 3, c, 1);
+	g = AvolittyAssociatorC((void * *) e, h, a, b, f, i, 3, c, d, 1);
+	k = (unsigned char *) h[0];
+
+	while (j != i[0]) {
+		printf("%c", k[j]);
+		j++;
+	}
 
 /*
 	key (unsigned char)

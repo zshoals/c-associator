@@ -675,7 +675,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 		1 - string object
 */
 
-unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char i) {
+unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char i) {
 	unsigned long j = 0;
 	unsigned char k = 0;
 	unsigned long * l;
@@ -725,14 +725,17 @@ unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, u
 
 						if (s == 0) {
 							k = 0;
+							f[0] = m;
 							m = 0;
-							t = d[0] - 1;
 						}
 					}
 				}
 
 				if (s == 1) {
 					k = 1;
+				} else {
+					m = t;
+					t = d[0] - 1;
 				}
 			}
 
@@ -747,7 +750,36 @@ unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, u
 	}
 
 	if (k == 0) {
-		/* .. */
+		g = f[0];
+		f[0] = 0;
+		p = u[0][m][g];
+
+		if (p[0] != 0) {
+			g = 1;
+			m = 0;
+
+			while (p[g] != 0) {
+				m = (m * 100) + p[g];
+				g++;
+			}
+
+			b[0] = realloc(b[0], m);
+			n = (unsigned char *) b[0];
+
+			if (n != 0) {
+				f[0] = m;
+				g++;
+				m = 0;
+
+				while (m != f[0]) {
+					n[m] = (unsigned char) p[g];
+					g++;
+					m++;
+				}
+
+				k = 1;
+			}
+		}
 	}
 
 	if (f[0] == 0 && k == 0) {
