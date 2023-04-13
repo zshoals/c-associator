@@ -286,7 +286,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 				n = 1;
 
 				while (x[n] != 0) {
-					m = (m * 10) + x[n];
+					m = (m * 100) + x[n];
 					n++;
 				}
 
@@ -485,7 +485,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 					n = 1;
 
 					while (x[n] != 0) {
-						m = (m * 10) + x[n];
+						m = (m * 100) + x[n];
 						n++;
 					}
 
