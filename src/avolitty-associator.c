@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void AvolittyAssociatorF(unsigned long a, unsigned char * b, unsigned char * c) {
+void AvolittyAssociatorG(unsigned long a, unsigned char * b, unsigned char * c) {
 	unsigned short d[32] = {254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254};
 	unsigned short e = 32;
 	unsigned short f;
@@ -102,7 +102,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 			q = (unsigned char *) a[l];
 			y = e[l];
 		} else {
-			AvolittyAssociatorF(e[l], q, (unsigned char *) a[l]);
+			AvolittyAssociatorG(e[l], q, (unsigned char *) a[l]);
 			y = 32;
 		}
 
@@ -277,7 +277,7 @@ unsigned char AvolittyAssociatorB(void * * a, void * b, unsigned long * * * c, u
 				q = (unsigned char *) a[l];
 				y = e[l];
 			} else {
-				AvolittyAssociatorF(e[l], q, (unsigned char *) a[l]);
+				AvolittyAssociatorG(e[l], q, (unsigned char *) a[l]);
 				y = 32;
 			}
 
@@ -695,7 +695,7 @@ unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c,
 			n = (unsigned char *) a[j];
 			o = e[j];
 		} else {
-			AvolittyAssociatorF(e[j], n, (unsigned char *) a[j]);
+			AvolittyAssociatorG(e[j], n, (unsigned char *) a[j]);
 			o = 32;
 		}
 
@@ -793,6 +793,21 @@ unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c,
 }
 
 /*
+	[a] - global data
+	[b] - global data length
+	[c] - memory allocation error indexes
+	[d] - key depth
+	[e] - array of keys
+	[f] - array of values
+	[g] - memory allocation error status
+*/
+
+unsigned char AvolittyAssociatorD(unsigned long * * * a, unsigned long * b, unsigned long * c, unsigned long d, unsigned char * * * * e, unsigned char * * * * f, unsigned char g) {
+	/* .. */
+	return 0;
+}
+
+/*
 	[a] - key
 	[b] - global data
 	[c] - global data length
@@ -807,7 +822,7 @@ unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c,
 	[u] - memory allocation error status
 */
 
-unsigned char AvolittyAssociatorD(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
+unsigned char AvolittyAssociatorE(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
 	unsigned long i = 0;
 	unsigned char j = 0;
 	unsigned char * k;
@@ -850,7 +865,7 @@ unsigned char AvolittyAssociatorD(void * * a, unsigned long * * * b, unsigned lo
 			k = (unsigned char *) a[i];
 			l = d[i];
 		} else {
-			AvolittyAssociatorF(d[i], k, (unsigned char *) a[j]);
+			AvolittyAssociatorG(d[i], k, (unsigned char *) a[j]);
 			l = 32;
 		}
 
@@ -962,7 +977,7 @@ unsigned char AvolittyAssociatorD(void * * a, unsigned long * * * b, unsigned lo
 	return j;
 }
 
-unsigned char AvolittyAssociatorE(void * a, void * b, unsigned long c, unsigned char * d) {
+unsigned char AvolittyAssociatorF(void * a, void * b, unsigned long c, unsigned char * d) {
 	/* string|float|int to char converter for B C D key strings */
 	return 0;
 }
