@@ -823,18 +823,16 @@ unsigned char AvolittyAssociatorD(void * * a, unsigned long * * * b, unsigned lo
 	if (u == 1) {
 		l = t[0];
 		m = t[1];
-		k = g[0][l][m];
-		free(k);
+		free(f[0][l][m]);
 		f[0][l][m] = malloc(2);
-		k = g[0][l][m];
+		k = f[0][l][m];
 
 		if (k != 0) {
 			k[0] = 0;
 			k[1] = 0;
-			k = f[0][l][m];
-			free(k);
-			f[0][l][m] = malloc(2);
-			k = f[0][l][m];
+			free(g[0][l][m]);
+			g[0][l][m] = malloc(2);
+			k = g[0][l][m];
 
 			if (k != 0) {
 				k[0] = 0;
