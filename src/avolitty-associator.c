@@ -792,9 +792,176 @@ unsigned char AvolittyAssociatorC(void * * a, void * * b, unsigned long * * * c,
 	return k;
 }
 
-unsigned char AvolittyAssociatorD(void * a, void * b, unsigned long c, unsigned char * d) {
+/*
+	[a] - key
+	[b] - global data
+	[c] - global data length
+	[d] - key lengths
+	[t] - memory allocation error indexes
+	[e] - key depth
+	[f] - array of keys
+	[g] - array of values
+	[h] - key object type identifier
+		0 - integral object
+		1 - string object
+	[u] - memory allocation error status
+*/
+
+unsigned char AvolittyAssociatorD(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
+	unsigned long i = 0;
+	unsigned char j = 0;
+	unsigned char * k;
+	unsigned long l;
+	unsigned long m;
+	unsigned long n;
+	unsigned char * o;
+	unsigned char p;
+	unsigned char q;
+	unsigned char r;
+	unsigned long s;
+
+	if (u == 1) {
+		l = t[0];
+		m = t[1];
+		k = g[0][l][m];
+		free(k);
+		f[0][l][m] = malloc(2);
+		k = g[0][l][m];
+
+		if (k != 0) {
+			k[0] = 0;
+			k[1] = 0;
+			k = f[0][l][m];
+			free(k);
+			f[0][l][m] = malloc(2);
+			k = f[0][l][m];
+
+			if (k != 0) {
+				k[0] = 0;
+				k[1] = 0;
+			} else {
+				j = 1;
+			}
+		} else {
+			j = 1;
+		}
+	}
+
+	while (e != i && j == 0) {
+		if (d[i] < 32) {
+			k = (unsigned char *) a[i];
+			l = d[i];
+		} else {
+			AvolittyAssociatorF(d[i], k, (unsigned char *) a[j]);
+			l = 32;
+		}
+
+		m = 0;
+
+		while (m != c[0]) {
+			if (b[0][m][1] == i) {
+				n = b[0][m][0];
+
+				while (n != 0) {
+					n--;
+					o = f[0][m][n];
+					p = o[0];
+
+					if (l == p) {
+						q = p;
+						r = 0;
+
+						while (p != 0) {
+							p--;
+
+							if (k[p] != o[q]) {
+								p = 0;
+								r = 1;
+							}
+
+							q--;
+						}
+
+						if (r == 0) {
+							j = 0;
+							s = n;
+							n = 0;
+						}
+					}
+				}
+
+				if (r == 1) {
+					j = 1;
+				} else {
+					n = m;
+					m = c[0] - 1;
+				}
+			}
+
+			m++;
+		}
+
+		if (j == 1) {
+			e = i;
+		} else {
+			i++;
+		}
+	}
+
+	if (j == 0) {
+		o = g[0][n][s];
+		e = 1;
+		m = 0;
+
+		while (o[e] != 0) {
+			m = (m * 100) + o[e];
+			e++;
+		}
+
+		if (o[0] == 0) {
+			e = b[0][m][0];
+
+			while (e != 0) {
+				e--;
+				o = g[0][m][e];
+
+				if (o[1] != 0) {
+					if (o[0] == 0) {
+						/* .. */
+					} else {
+						free(o);
+						g[0][m][e] = malloc(2);
+						o = g[0][m][e];
+
+						if (o != 0) {
+							o[0] = 0;
+							o[1] = 0;
+						} else {
+							j = 1;
+							t[0] = m;
+							t[1] = e;
+						}
+					}
+				}
+			}
+		} else {
+			free(o);
+			g[0][n][s] = malloc(2);
+			o = g[0][n][s];
+
+			if (o != 0) {
+				o[0] = 0;
+				o[1] = 0;
+			} else {
+				j = 1;
+				t[0] = m;
+				t[1] = e;
+			}
+		}
+	}
+
 	/* delete/resize */
-	return 0;
+	return j;
 }
 
 unsigned char AvolittyAssociatorE(void * a, void * b, unsigned long c, unsigned char * d) {

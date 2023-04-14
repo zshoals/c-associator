@@ -11,10 +11,11 @@ int main (void) {
 	unsigned long f[3] = {4, 4, 4};
 	unsigned char g;
 	void * * h = malloc(sizeof(unsigned char *));
-	unsigned long i[1] = {0};
-	unsigned long j = 0;
-	unsigned char k[1];
-	unsigned char * l;
+	unsigned long i[2] = {0, 0};
+	unsigned long j[1] = {0};
+	unsigned long k = 0;
+	unsigned char l[1];
+	unsigned char * m;
 
 	/*
 		[e] - keys
@@ -73,15 +74,32 @@ int main (void) {
 		0 - integral object
 		1 - string object
 */
+	g = AvolittyAssociatorC((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
+	printf("%lu\n", l[0]);
+	m = (unsigned char *) h[0];
 
-	g = AvolittyAssociatorC((void * *) e, h, a, b, f, i, 3, c, d, k, 1);
-	printf("%lu\n", k[0]);
-	l = (unsigned char *) h[0];
-
-	while (j != i[0]) {
-		printf("%c", l[j]);
-		j++;
+	while (k != j[0]) {
+		printf("%c", m[k]);
+		k++;
 	}
+
+	printf("\n");
+
+/*
+	[e] - key
+	[a] - global data
+	[b] - global data length
+	[f] - key lengths
+	[i] - memory allocation error indexes
+	[3] - key depth
+	[c] - array of keys
+	[d] - array of values
+	[1] - key object type identifier
+		0 - integral object
+		1 - string object
+	[g] - memory allocation error status
+*/
+	g = AvolittyAssociatorD((void * *) e, a, b, f, i, 3, c, d, 1, g);
 
 /*
 	key (unsigned char)
