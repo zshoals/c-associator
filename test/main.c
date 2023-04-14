@@ -3,10 +3,10 @@
 #include "../src/avolitty-associator.h"
 
 int main (void) {
-	unsigned long * * * a = malloc(sizeof(unsigned char * * *));
+	unsigned long * * * a = malloc(sizeof(unsigned char * *));
 	unsigned long b[1];
-	unsigned char * * * * c = malloc(sizeof(unsigned char * * * *));
-	unsigned char * * * * d = malloc(sizeof(unsigned char * * * *));
+	unsigned char * * * * c = malloc(sizeof(unsigned char * * *));
+	unsigned char * * * * d = malloc(sizeof(unsigned char * * *));
 	char * e[3] = {"key1", "key2", "key3"};
 	unsigned long f[3] = {4, 4, 4};
 	unsigned char g;
@@ -43,8 +43,6 @@ int main (void) {
 	printf("%u %u %u\n", d[0][1][0][0], d[0][1][0][1], d[0][1][0][2]);
 	printf("%u %c%c%c%c\n", c[0][2][0][0], c[0][2][0][1], c[0][2][0][2], c[0][2][0][3], c[0][2][0][4]);
 	printf("%u %u %c%c%c%c%c%c\n", d[0][2][0][0], d[0][2][0][1], d[0][2][0][2], d[0][2][0][3], d[0][2][0][4], d[0][2][0][5], d[0][2][0][6], d[0][2][0][7]);
-
-
 	e[1] = "key5";
 	e[2] = "key4";
 	g = AvolittyAssociatorB((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
@@ -56,7 +54,6 @@ int main (void) {
 	printf("%u %c%c%c%c\n", c[0][1][1][0], c[0][1][1][1], c[0][1][1][2], c[0][1][1][3], c[0][1][1][4]);
 	printf("%u %u %u\n", d[0][1][0][0], d[0][1][0][1], d[0][1][0][2]);
 	printf("%u %c%c%c%c\n", c[0][3][0][0], c[0][3][0][1], c[0][3][0][2], c[0][3][0][3], c[0][3][0][4]);
-
 	printf("%u %u %c%c%c%c%c%c\n", d[0][2][0][0], d[0][2][0][1], d[0][2][0][2], d[0][2][0][3], d[0][2][0][4], d[0][2][0][5], d[0][2][0][6], d[0][2][0][7]);
 	printf("%u %u %c%c%c%c%c%c\n", d[0][3][0][0], d[0][3][0][1], d[0][3][0][2], d[0][3][0][3], d[0][3][0][4], d[0][3][0][5], d[0][3][0][6], d[0][2][0][7]);
 	printf("\n");
