@@ -60,7 +60,7 @@ int main (void) {
 	printf("\n");
 
 /*
-	[e] - key
+	[e] - multidimensional keys to search
 	[h] - value result
 	[a] - global data
 	[b] - global data length
@@ -74,7 +74,7 @@ int main (void) {
 		0 - integral object
 		1 - string object
 */
-	g = AvolittyAssociatorC((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
+	g = AvolittyAssociatorD((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
 	printf("%lu\n", l[0]);
 	m = (unsigned char *) h[0];
 
@@ -99,7 +99,7 @@ int main (void) {
 		1 - string object
 	[g] - memory allocation error status
 */
-	g = AvolittyAssociatorD((void * *) e, a, b, f, i, 3, c, d, 1, g);
+	g = AvolittyAssociatorE((void * *) e, a, b, f, i, 3, c, d, 1, g);
 
 /*
 	key (unsigned char)
