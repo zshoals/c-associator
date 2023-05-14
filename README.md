@@ -12,7 +12,6 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Compiles with forward-compatible C89 and C++
 - Conforms to strict ISO C with -pedantic-errors enabled
 - Data with char, double, int, float, long, short and string data types supported with all modifiers
-- Efficient alternative to rand() with the same integer length between 0 and 65535
 - Efficient without multithreading or processor-specific vectorization
 - Fast deletion, hashing, insertion and lookup speeds without relying on compiler optimization
 - Hashed keys use 50% less memory than SHA-256 with less probability of collisions
