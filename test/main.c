@@ -74,6 +74,7 @@ int main (void) {
 		0 - integral object
 		1 - string object
 */
+
 	g = AvolittyAssociatorF((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
 	printf("%lu\n", l[0]);
 	m = (unsigned char *) h[0];
@@ -111,23 +112,23 @@ int main (void) {
 		all data types converted to char array
 			0 value type
 				0 multidimensional array index in global data array, 1-n is index converted from unsigned long
-				1 char
-				2 unsigned char
-				3 int
-				4 unsigned int
-				5 long
-				6 unsigned long
-				7 double
-				8 float
-				etc
+				1 char string (initialized with = "string")
+				2 unsigned char string
+				3 char
+				4 unsigned char
+				5 int
+				6 unsigned int
+				7 long
+				8 unsigned long
+				9 double
+				10 float
 			1-n length
 			2-n value
 	global data (unsigned long)
 		0 [
 			0 value array length [value of 0 means unallocated],
-			1 key multidimensional recursion level
-			2 allocated byte count
-			3 assigned byte count
+			1 count of pointers assigned
+			2 key multidimensional recursion level
 		]
 	global data length (unsigned long)
 */

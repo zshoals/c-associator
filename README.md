@@ -12,6 +12,8 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Compiles with forward-compatible C89 and C++
 - Conforms to strict ISO C with -pedantic-errors enabled
 - Data with char, double, float, int, long, short and string types supported with all modifiers
+- Duplicate keys and values with different data types or modifiers are considered unique
+- Each deletion frees memory for the deleted key and value pair without duplicating and resizing arrays
 - Efficient without multithreading or processor-specific vectorization
 - Fast deletion, hashing, insertion and lookup speeds without relying on compiler optimization
 - Hashed keys use 50% less memory than SHA-256 with less probability of collisions
@@ -27,6 +29,8 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Minified and readable code with single-letter variable names
 - Multiple data types supported in a single hash table without using struct or union
 - Prints multidimensional hash table contents for parsing data as a multidimensional array
+- Reallocates memory efficiently within the scope of each key
+- Resizes based on pointer counts instead of bytes allocated to prevent unnecessary calculations and overflows
 
 #### License Tiers
 - Free Tier - $0 for evaluation and testing before subscribing to Paid Tier
