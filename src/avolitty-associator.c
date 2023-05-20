@@ -1034,6 +1034,8 @@ unsigned char AvolittyAssociatorH(void * * a, unsigned long * * * b, unsigned lo
 				o = g[0][m][e];
 
 				if (o[1] != 0) {
+					b[0][m][1] -= 1;
+
 					if (o[0] == 0) {
 						/* .. */
 					} else {
@@ -1053,21 +1055,26 @@ unsigned char AvolittyAssociatorH(void * * a, unsigned long * * * b, unsigned lo
 				}
 			}
 		} else {
-			free(o);
-			g[0][n][s] = malloc(2);
-			o = g[0][n][s];
+			if (o[1] != 0) {
+				b[0][n][1] -= 1;
+				free(o);
+				g[0][n][s] = malloc(2);
+				o = g[0][n][s];
 
-			if (o != 0) {
-				o[0] = 0;
-				o[1] = 0;
-			} else {
-				j = 1;
-				t[0] = m;
-				t[1] = e;
+				if (o != 0) {
+					o[0] = 0;
+					o[1] = 0;
+				} else {
+					j = 1;
+					t[0] = m;
+					t[1] = e;
+				}
 			}
 		}
 	}
 
+	printf("%lu\n", b[0][n][0]);
+	printf("%lu\n", b[0][n][1]);
 	/* delete/resize */
 	return j;
 }
