@@ -30,7 +30,9 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Multiple data types supported in a single hash table without using struct or union
 - Prints multidimensional hash table contents for parsing data as a multidimensional array
 - Reallocates memory efficiently within the scope of each key
-- Resizes based on pointer counts instead of bytes allocated to prevent unnecessary calculations and overflows
+- Resizes memory blocks automatically after 10% of key and value pairs deleted
+- Resizes memory blocks based on unassigned pointer counts to prevent extra calculations and overflows
+- Resizes memory blocks incrementally instead of duplicating entire memory blocks
 
 #### License Tiers
 - Free Tier - $0 for evaluation and testing before subscribing to Paid Tier
