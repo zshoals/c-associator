@@ -1073,8 +1073,17 @@ unsigned char AvolittyAssociatorH(void * * a, unsigned long * * * b, unsigned lo
 		}
 	}
 
+	i = b[0][n][0];
+
+	if (
+		i != 0 &&
+		((b[0][n][1] * 100) / i) < 90
+	) {
+		/* resize */
+	}
+
 	printf("%lu\n", b[0][n][0]);
 	printf("%lu\n", b[0][n][1]);
-	/* delete/resize */
+	/* delete */
 	return j;
 }
