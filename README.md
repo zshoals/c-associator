@@ -1,8 +1,5 @@
 ## C Avolitty Associator
 
-#### Author
-Avolitty - [https://avolitty.com](https://avolitty.com)
-
 #### Description
 In development.
 
@@ -33,7 +30,3 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Resizes memory blocks automatically after 10% of key and value pairs deleted
 - Resizes memory blocks based on unassigned pointer counts to prevent extra calculations and overflows
 - Resizes memory blocks incrementally instead of duplicating entire memory blocks
-
-#### License Tiers
-- Free Tier - $0 for evaluation and testing before subscribing to Paid Tier
-- Paid Tier - [$1 monthly subscription](https://avolitty.com/subscribe/) for business and personal usage
