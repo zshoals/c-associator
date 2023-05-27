@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../src/avolitty-associator.h"
+#include "array-associator.h"
 
 int main (void) {
 	unsigned long * * * a = malloc(sizeof(unsigned char * *));
@@ -36,8 +36,8 @@ int main (void) {
 			2 - pointer index to array (multidimensional arrays can be accessed using get method with raw a[0][0][0] etc without undefined index errors)
 	*/
 
-	g = AvolittyAssociatorB(a, b, c, d);
-	g = AvolittyAssociatorD((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
+	g = arrayAssociatorB(a, b, c, d);
+	g = arrayAssociatorD((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
 	printf("%u %c%c%c%c\n", c[0][0][0][0], c[0][0][0][1], c[0][0][0][2], c[0][0][0][3], c[0][0][0][4]);
 	printf("%u %u %u\n", d[0][0][0][0], d[0][0][0][1], d[0][0][0][2]);
 	printf("%u %c%c%c%c\n", c[0][1][0][0], c[0][1][0][1], c[0][1][0][2], c[0][1][0][3], c[0][1][0][4]);
@@ -46,7 +46,7 @@ int main (void) {
 	printf("%u %u %c%c%c%c%c%c\n", d[0][2][0][0], d[0][2][0][1], d[0][2][0][2], d[0][2][0][3], d[0][2][0][4], d[0][2][0][5], d[0][2][0][6], d[0][2][0][7]);
 	e[1] = "key5";
 	e[2] = "key4";
-	g = AvolittyAssociatorD((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
+	g = arrayAssociatorD((void * *) e, "value", a, b, f, 3, 5, c, d, 1, 1);
 	printf("\n");
 	printf("%u %c%c%c%c\n", c[0][0][0][0], c[0][0][0][1], c[0][0][0][2], c[0][0][0][3], c[0][0][0][4]);
 	printf("%u %u %u\n", d[0][0][0][0], d[0][0][0][1], d[0][0][0][2]);
@@ -75,7 +75,7 @@ int main (void) {
 		1 - string object
 */
 
-	g = AvolittyAssociatorF((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
+	g = arrayAssociatorF((void * *) e, h, a, b, f, j, 3, c, d, l, 1);
 	printf("%lu\n", l[0]);
 	m = (unsigned char *) h[0];
 
@@ -100,7 +100,7 @@ int main (void) {
 		1 - string object
 	[g] - memory allocation error status
 */
-	g = AvolittyAssociatorH((void * *) e, a, b, f, i, 3, c, d, 1, g);
+	g = arrayAssociatorH((void * *) e, a, b, f, i, 3, c, d, 1, g);
 
 /*
 	key (unsigned char)

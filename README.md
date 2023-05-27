@@ -1,8 +1,6 @@
-## C Avolitty Associator
+## C Array Associator
 
 #### Description
-In development.
-
 Create secure multidimensional hash tables using C with a fast and unique array associating algorithm.
 
 - Allocates dynamic memory safely with precise bounds
@@ -30,3 +28,6 @@ Create secure multidimensional hash tables using C with a fast and unique array 
 - Resizes memory blocks automatically after 10% of key and value pairs deleted
 - Resizes memory blocks based on unassigned pointer counts to prevent extra calculations and overflows
 - Resizes memory blocks incrementally instead of duplicating entire memory blocks
+
+#### Usage
+In development.

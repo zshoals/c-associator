@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned char AvolittyAssociatorI(void * a, void * b, unsigned long c, unsigned char * d) {
+unsigned char arrayAssociatorI(void * a, void * b, unsigned long c, unsigned char * d) {
 	/* string|float|int to char converter for B C D key strings */
 	return 0;
 }
 
-void AvolittyAssociatorJ(unsigned long a, unsigned char * b, unsigned char * c) {
+void arrayAssociatorJ(unsigned long a, unsigned char * b, unsigned char * c) {
 	unsigned short d[32] = {254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254};
 	unsigned short e = 32;
 	unsigned short f;
@@ -33,7 +33,7 @@ void AvolittyAssociatorJ(unsigned long a, unsigned char * b, unsigned char * c) 
 	return;
 }
 
-unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d, unsigned char * * * * e) {
+unsigned char arrayAssociatorA(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d, unsigned char * * * * e) {
 	unsigned char f = 0;
 	a[0] = malloc(sizeof(unsigned long *));
 
@@ -70,7 +70,7 @@ unsigned char AvolittyAssociatorA(unsigned long * * * a, unsigned long * b, unsi
 	return f;
 }
 
-unsigned char AvolittyAssociatorB(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d) {
+unsigned char arrayAssociatorB(unsigned long * * * a, unsigned long * b, unsigned char * * * * c, unsigned char * * * * d) {
 	unsigned char e = 0;
 	a[0] = malloc(sizeof(unsigned long *));
 
@@ -122,7 +122,7 @@ unsigned char AvolittyAssociatorB(unsigned long * * * a, unsigned long * b, unsi
                 2 - pointer index to array (multidimensional associative arrays)
 */
 
-unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
+unsigned char arrayAssociatorC(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
 	return 0;
 }
 
@@ -145,7 +145,7 @@ unsigned char AvolittyAssociatorC(void * * a, void * b, unsigned long * * * c, u
 		2 - pointer index to array (multidimensional associative arrays)
 */
 
-unsigned char AvolittyAssociatorD(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
+unsigned char arrayAssociatorD(void * * a, void * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long f, unsigned long g, unsigned char * * * * h, unsigned char * * * * i, unsigned char j, unsigned char k) {
 	unsigned long l = 0;
 	unsigned long m = 0;
 	unsigned long n = 0;
@@ -168,7 +168,7 @@ unsigned char AvolittyAssociatorD(void * * a, void * b, unsigned long * * * c, u
 			q = (unsigned char *) a[l];
 			y = e[l];
 		} else {
-			AvolittyAssociatorJ(e[l], q, (unsigned char *) a[l]);
+			arrayAssociatorJ(e[l], q, (unsigned char *) a[l]);
 			y = 32;
 		}
 
@@ -345,7 +345,7 @@ unsigned char AvolittyAssociatorD(void * * a, void * b, unsigned long * * * c, u
 				q = (unsigned char *) a[l];
 				y = e[l];
 			} else {
-				AvolittyAssociatorJ(e[l], q, (unsigned char *) a[l]);
+				arrayAssociatorJ(e[l], q, (unsigned char *) a[l]);
 				y = 32;
 			}
 
@@ -748,7 +748,7 @@ unsigned char AvolittyAssociatorD(void * * a, void * b, unsigned long * * * c, u
 		1 - string object
 */
 
-unsigned char AvolittyAssociatorE(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char * v, unsigned char i) {
+unsigned char arrayAssociatorE(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char * v, unsigned char i) {
 	return 0;
 }
 
@@ -768,7 +768,7 @@ unsigned char AvolittyAssociatorE(void * * a, void * * b, unsigned long * * * c,
 		1 - string object
 */
 
-unsigned char AvolittyAssociatorF(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char * v, unsigned char i) {
+unsigned char arrayAssociatorF(void * * a, void * * b, unsigned long * * * c, unsigned long * d, unsigned long * e, unsigned long * f, unsigned long g, unsigned char * * * * h, unsigned char * * * * u, unsigned char * v, unsigned char i) {
 	unsigned long j = 0;
 	unsigned char k = 0;
 	unsigned long * l;
@@ -786,7 +786,7 @@ unsigned char AvolittyAssociatorF(void * * a, void * * b, unsigned long * * * c,
 			n = (unsigned char *) a[j];
 			o = e[j];
 		} else {
-			AvolittyAssociatorJ(e[j], n, (unsigned char *) a[j]);
+			arrayAssociatorJ(e[j], n, (unsigned char *) a[j]);
 			o = 32;
 		}
 
@@ -898,7 +898,7 @@ unsigned char AvolittyAssociatorF(void * * a, void * * b, unsigned long * * * c,
 	[u] - memory allocation error status
 */
 
-unsigned char AvolittyAssociatorG(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
+unsigned char arrayAssociatorG(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
 	return 0;
 }
 
@@ -917,7 +917,7 @@ unsigned char AvolittyAssociatorG(void * * a, unsigned long * * * b, unsigned lo
 	[u] - memory allocation error status
 */
 
-unsigned char AvolittyAssociatorH(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
+unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long * c, unsigned long * d, unsigned long * t, unsigned long e, unsigned char * * * * f, unsigned char * * * * g, unsigned char h, unsigned char u) {
 	unsigned long i = 0;
 	unsigned char j = 0;
 	unsigned char * k;
@@ -960,7 +960,7 @@ unsigned char AvolittyAssociatorH(void * * a, unsigned long * * * b, unsigned lo
 			k = (unsigned char *) a[i];
 			l = d[i];
 		} else {
-			AvolittyAssociatorJ(d[i], k, (unsigned char *) a[j]);
+			arrayAssociatorJ(d[i], k, (unsigned char *) a[j]);
 			l = 32;
 		}
 
