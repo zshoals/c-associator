@@ -161,7 +161,7 @@ unsigned char arrayAssociatorD(void * * a, void * b, unsigned long * * * c, unsi
 	unsigned char * x;
 	unsigned char y;
 	unsigned long z = 0;
-	q = malloc(sizeof(char) << 5);
+	q = malloc(32);
 
 	if (q != 0) {
 		if (e[l] < 32) {
@@ -929,6 +929,10 @@ unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long 
 	unsigned char q;
 	unsigned char r;
 	unsigned long s;
+	unsigned char * v;
+	unsigned char * w;
+	unsigned char * * x;
+	unsigned char * * y;
 
 	if (u == 1) {
 		l = t[0];
@@ -1079,7 +1083,45 @@ unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long 
 		i != 0 &&
 		((b[0][n][1] * 100) / i) < 90
 	) {
-		/* resize */
+		l = b[0][n][1];
+		m = sizeof(unsigned char *) * l;
+		s = 0;
+		x = malloc(m);
+		y = malloc(m);
+		m = 0;
+
+		if (o != 0) {
+			while (l != m) {
+				v = f[0][n][m];
+				w = g[0][n][m];
+
+				if (
+					v[0] != 0 &&
+					w[1] != 0
+				) {
+					p = v[0] + 1;
+					x[s] = malloc(p);
+
+					if (x[s] != 0) {
+						while (p != 0) {
+							p--;
+							x[s][p] = v[p];
+						}
+
+						/* resize */
+						s++;
+					} else {
+						j = 1;
+						m = l;
+					}
+				}
+
+				free(v);
+				m++;
+			}
+		} else {
+			j = 1;
+		}
 	}
 
 	printf("%lu\n", b[0][n][0]);
