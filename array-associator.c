@@ -1090,7 +1090,10 @@ unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long 
 		y = malloc(m);
 		m = 0;
 
-		if (o != 0) {
+		if (
+			x != 0 &&
+			y != 0
+		) {
 			while (l != m) {
 				v = f[0][n][m];
 				w = g[0][n][m];
@@ -1108,8 +1111,30 @@ unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long 
 							x[s][p] = v[p];
 						}
 
-						/* resize */
-						s++;
+						i = 1;
+						p = 0;
+
+						while (w[i] != 0) {
+							p = (p * 100) + w[i];
+							i++;
+						}
+
+						i += p + 1;
+						y[s] = malloc(i);
+
+						if (y[s] != 0) {
+							p = i;
+
+							while (i != 0) {
+								i--;
+								y[s][i] = w[i];
+							}
+
+							s++;
+						} else {
+							j = 1;
+							m = 1;
+						}
 					} else {
 						j = 1;
 						m = l;
@@ -1117,7 +1142,17 @@ unsigned char arrayAssociatorH(void * * a, unsigned long * * * b, unsigned long 
 				}
 
 				free(v);
+				free(w);
 				m++;
+			}
+
+			if (j == 0) {
+				free(f[0][n]);
+				free(g[0][n]);
+
+				if (s != 0) {
+					
+				}
 			}
 		} else {
 			j = 1;
